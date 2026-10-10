@@ -1,0 +1,25 @@
+services:
+	timescaledb:
+		image: timescale/timescaledb:latest-pg16
+		ports:
+			- "5432:5432"
+
+	redis:
+		image: redis:7-alpine
+		ports:
+			- "6379:6379"
+
+	qdrant:
+		image: qdrant/qdrant:latest
+		ports:
+			- "6333:6333"
+
+	mosquitto:
+		image: eclipse-mosquitto:2
+		ports:
+			- "1883:1883"
+
+	mlflow:
+		image: ghcr.io/mlflow/mlflow:latest
+		ports:
+			- "5000:5000"
